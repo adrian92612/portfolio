@@ -18,7 +18,15 @@
 
 html,
 body {
-  @apply min-h-full bg-bgColor text-textColor font-baskerville;
+  @apply min-h-full max-w-screen-2xl mx-auto bg-bgColor text-textColor2 font-baskerville;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply text-textColor;
 }
 
 body::before {
@@ -28,6 +36,6 @@ body::before {
   background-image: url("src/assets/noise.svg");
   background-size: fill;
   opacity: 0.6;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
