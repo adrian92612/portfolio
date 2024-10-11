@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+  @apply p-0 m-0 box-border;
+}
+
+:root {
+  --bg-color: hsl(45, 10%, 90%);
+  --text-color2: hsl(0, 10%, 30%);
+  --text-color: hsl(0, 0%, 20%);
+}
+
+html,
+body {
+  @apply h-screen bg-bgColor text-textColor font-baskerville;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("src/assets/noise.svg");
+  background-size: cover;
+  opacity: 0.8;
+  pointer-events: none;
+}
