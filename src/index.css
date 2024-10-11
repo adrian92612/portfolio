@@ -12,21 +12,22 @@
 
 :root {
   --bg-color: hsl(45, 10%, 90%);
+  --text-color: hsl(0, 0%, 15%);
   --text-color2: hsl(0, 10%, 30%);
-  --text-color: hsl(0, 0%, 20%);
 }
 
 html,
 body {
-  @apply h-screen bg-bgColor text-textColor font-baskerville;
+  @apply min-h-full bg-bgColor text-textColor font-baskerville;
 }
 
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-image: url("src/assets/noise.svg");
-  background-size: cover;
-  opacity: 0.8;
+  background-size: fill;
+  opacity: 0.6;
+  z-index: 1;
   pointer-events: none;
 }

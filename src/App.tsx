@@ -1,27 +1,22 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./components/home";
+import Works from "./components/works";
+import Contact from "./components/contact";
+import NotFound from "./components/not-found";
+
 function App() {
   return (
-    <>
-      {/* <div className="fixed inset-0 w-full h-full opacity-30">
-        <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
-          <filter id="noiseFilter">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="3"
-              numOctaves="3"
-              stitchTiles="stitch"
-            />
-          </filter>
-
-          <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-        </svg>
-      </div> */}
-      <div className="grid place-items-center h-screen">
-        <div>
-          <h1 className="text-3xl text-center">UNDER CONSTRUCTION</h1>
-          <p className="text-textColor2 text-right">soon to rise...</p>
-        </div>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/works" element={<Works />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
