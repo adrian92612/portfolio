@@ -95,7 +95,7 @@ const WorksSection = () => {
       </h3>
       <ul>
         {works.map((work) => (
-          <li key={work.name} className="animate-fadeInSlideUp">
+          <li key={work.name} className="animate-fadeInSlideUp ">
             <h4>{work.name}</h4>
             <p className="text-sm mb-2">{work.description}</p>
             <div>{work.stack.join(" | ")}</div>

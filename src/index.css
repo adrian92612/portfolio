@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  * {
+    line-height: 1.625;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -11,9 +17,9 @@
 }
 
 :root {
-  --bg-color: hsl(45, 10%, 90%);
+  --bg-color: hsl(45, 10%, 95%);
   --text-color: hsl(0, 0%, 15%);
-  --text-color2: hsl(0, 10%, 30%);
+  --text-color2: hsl(0, 10%, 25%);
 }
 
 html,
@@ -39,7 +45,7 @@ body::before {
   inset: 0;
   background-image: url("/noise.svg");
   background-size: cover;
-  opacity: 0.65;
+  opacity: 0.5;
   z-index: 10;
   pointer-events: none;
 }
