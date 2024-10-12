@@ -1,5 +1,6 @@
 import { MdArrowOutward } from "react-icons/md";
 import { PiCodeLight } from "react-icons/pi";
+import { InView } from "react-intersection-observer";
 
 const techStack = [
   "HTML5",
@@ -84,55 +85,113 @@ const works: WorkProps[] = [
   },
 ];
 
+const WorksSection = () => {
+  return (
+    <div className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
+      <h3 className="text-3xl inline-flex items-center gap-2 my-2 animate-fadeInSlideRight">
+        / Works
+      </h3>
+      <ul>
+        {works.map((work) => (
+          <li key={work.name} className="animate-fadeInSlideUp">
+            <h4>{work.name}</h4>
+            <p className="text-sm mb-2">{work.description}</p>
+            <div>{work.stack.join(" | ")}</div>
+            <div className="flex items-center justify-end gap-2 mt-2 mb-4">
+              <a
+                href={work.code}
+                target="_blank"
+                className="inline-flex items-center relative"
+              >
+                Code
+                <MdArrowOutward />
+              </a>
+              <a
+                href={work.demo}
+                target="_blank"
+                className="inline-flex items-center relative"
+              >
+                Demo
+                <MdArrowOutward />
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      {/* animate each work upon view */}
+      {/* <ul>
+        {works.map((work) => (
+          <InView key={work.name} triggerOnce threshold={0.1}>
+            {({ inView, ref }) => (
+              <li
+                ref={ref}
+                className={`${inView ? "animate-fadeInSlideUp" : ""}`}
+              >
+                <h4>{work.name}</h4>
+                <p className="text-sm mb-2">{work.description}</p>
+                <div>{work.stack.join(" | ")}</div>
+                <div className="flex items-center justify-end gap-2 mt-2 mb-4">
+                  <a
+                    href={work.code}
+                    target="_blank"
+                    className="inline-flex items-center relative"
+                  >
+                    Code
+                    <MdArrowOutward />
+                  </a>
+                  <a
+                    href={work.demo}
+                    target="_blank"
+                    className="inline-flex items-center relative"
+                  >
+                    Demo
+                    <MdArrowOutward />
+                  </a>
+                </div>
+              </li>
+            )}
+          </InView>
+        ))}
+      </ul> */}
+    </div>
+  );
+};
+
+const TechSection = () => {
+  return (
+    <div className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
+      <h3 className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight ">
+        <PiCodeLight /> Technologies
+      </h3>
+      <ul className="my-2">
+        {techStack.map((tech) => (
+          <InView key={tech} triggerOnce threshold={0.1}>
+            {({ inView, ref }) => (
+              <li
+                key={tech}
+                ref={ref}
+                className={`${inView ? "animate-fadeInSlideRight" : ""}`}
+              >
+                {tech}
+              </li>
+            )}
+          </InView>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 export default function Works() {
   return (
     <>
       <div className="grid  sm:grid-cols-2 mb-5 gap-5 min-h-full">
         <div className=" border-black ">
-          <div className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
-            <h3 className="text-3xl inline-flex items-center gap-2 mt-2 animate-fadeInSlideRight">
-              / Works
-            </h3>
-            <ul className="animate-fadeInSlideLeft">
-              {works.map((work) => (
-                <li key={work.name}>
-                  <h4>{work.name}</h4>
-                  <p className="text-sm mb-2">{work.description}</p>
-                  <div>{work.stack.join(" | ")}</div>
-                  <div className="flex items-center justify-end gap-2 mt-2 mb-4">
-                    <a
-                      href={work.code}
-                      target="_blank"
-                      className="inline-flex items-center relative"
-                    >
-                      Code
-                      <MdArrowOutward />
-                    </a>
-                    <a
-                      href={work.demo}
-                      target="_blank"
-                      className="inline-flex items-center relative"
-                    >
-                      Demo
-                      <MdArrowOutward />
-                    </a>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <WorksSection />
         </div>
         <div className="border-black">
-          <div className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
-            <h3 className="text-lg inline-flex items-center gap-2 animate-fadeInSlideRight ">
-              <PiCodeLight /> Technologies
-            </h3>
-            <ul className="mb-2 animate-fadeInSlideRight ">
-              {techStack.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
-          </div>
+          <TechSection />
         </div>
       </div>
     </>

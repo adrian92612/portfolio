@@ -24,12 +24,17 @@ export default {
           "0%": { transform: "translateX(-100%)", opacity: 0 },
           "100%": { transform: "translateX(0)", opacity: 1 },
         },
+        fadeInSlideUp: {
+          "0%": { transform: "translateY(100%)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
+        },
       },
       animation: {
         fadeIn: "fadeIn 1s ease-in-out forwards",
-        fadeInSlow: "fadeIn 3s ease-out forwards",
+        fadeInSlow: "fadeIn 2s ease-out forwards",
         fadeInSlideLeft: "fadeInSlideLeft 1s ease-out forwards",
         fadeInSlideRight: "fadeInSlideRight 1s ease-out forwards",
+        fadeInSlideUp: "fadeInSlideUp 1s ease-out forwards",
       },
     },
   },
