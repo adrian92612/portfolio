@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="absolute pl-5 md:left-1/2 top-1/4 max-w-64 ">
+    <div className="absolute pl-5 md:left-1/2 top-1/4 max-w-64 animate-fadeIn">
       <h1 className="text-3xl mb-2">/ About Me</h1>
       <p>
         As a passionate and dedicated aspiring web developer, I am deeply

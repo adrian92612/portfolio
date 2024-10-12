@@ -87,23 +87,23 @@ const works: WorkProps[] = [
 export default function Works() {
   return (
     <>
-      <div className="grid  md:grid-cols-2 mb-5 gap-5">
-        <div className=" relative overflow-y-auto border-black">
-          <div className="absolute top-[15%] right-1/4 max-w-60 border-y border-textColor2">
-            <h3 className="text-xl inline-flex items-center gap-2 mt-2">
+      <div className="grid  sm:grid-cols-2 mb-5 gap-5 min-h-full">
+        <div className=" border-black ">
+          <div className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
+            <h3 className="text-3xl inline-flex items-center gap-2 mt-2 animate-fadeInSlideRight">
               / Works
             </h3>
-            <ul>
+            <ul className="animate-fadeInSlideLeft">
               {works.map((work) => (
                 <li key={work.name}>
                   <h4>{work.name}</h4>
                   <p className="text-sm mb-2">{work.description}</p>
                   <div>{work.stack.join(" | ")}</div>
-                  <div className="flex items-center justify-end gap-2 my-4">
+                  <div className="flex items-center justify-end gap-2 mt-2 mb-4">
                     <a
                       href={work.code}
                       target="_blank"
-                      className="inline-flex items-center"
+                      className="inline-flex items-center relative"
                     >
                       Code
                       <MdArrowOutward />
@@ -111,7 +111,7 @@ export default function Works() {
                     <a
                       href={work.demo}
                       target="_blank"
-                      className="inline-flex items-center"
+                      className="inline-flex items-center relative"
                     >
                       Demo
                       <MdArrowOutward />
@@ -122,12 +122,12 @@ export default function Works() {
             </ul>
           </div>
         </div>
-        <div className=" border-black relative overflow-y-auto">
-          <div className="absolute top-1/4 left-1/3 max-w-60 px-5 text-right border-y border-textColor2">
-            <h3 className="text-lg inline-flex items-center gap-2">
+        <div className="border-black">
+          <div className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
+            <h3 className="text-lg inline-flex items-center gap-2 animate-fadeInSlideRight ">
               <PiCodeLight /> Technologies
             </h3>
-            <ul className="mb-2">
+            <ul className="mb-2 animate-fadeInSlideRight ">
               {techStack.map((tech) => (
                 <li key={tech}>{tech}</li>
               ))}

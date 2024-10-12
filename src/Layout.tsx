@@ -5,7 +5,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main className="grid min-h-screen">
+      <main>
         <Outlet />
       </main>
       <footer className="flex items-center justify-end p-2">

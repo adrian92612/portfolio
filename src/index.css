@@ -18,7 +18,7 @@
 
 html,
 body {
-  @apply min-h-full max-w-screen-2xl mx-auto bg-bgColor text-textColor2 font-baskerville;
+  @apply min-h-dvh max-w-screen-2xl mx-auto bg-bgColor text-textColor2 font-baskerville;
 }
 
 h1,
@@ -26,7 +26,11 @@ h2,
 h3,
 h4,
 h5 {
-  @apply text-textColor;
+  @apply text-textColor font-bold;
+}
+
+#root {
+  @apply animate-fadeInSlow min-h-dvh grid grid-rows-[auto_1fr_auto];
 }
 
 body::before {
@@ -35,7 +39,22 @@ body::before {
   inset: 0;
   background-image: url("src/assets/noise.svg");
   background-size: fill;
-  opacity: 0.6;
+  opacity: 0.65;
   z-index: 2;
   pointer-events: none;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--text-color);
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
 }
