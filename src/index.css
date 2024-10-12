@@ -37,7 +37,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("src/assets/noise.svg");
+  background-image: url("/noise.svg");
   background-size: cover;
   opacity: 0.65;
   z-index: 10;
