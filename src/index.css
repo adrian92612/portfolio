@@ -38,9 +38,9 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: url("src/assets/noise.svg");
-  background-size: fill;
+  background-size: cover;
   opacity: 0.65;
-  z-index: 2;
+  z-index: 10;
   pointer-events: none;
 }
 

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="h-16 sticky text-lg top-0 px-2 flex items-center justify-between bg-bgColor z-[1]">
+    <header className="h-16 sticky text-lg top-0 px-5 flex items-center justify-between bg-bgColor z-[1]">
       <h1>Adrian Villamin</h1>
 
       <nav className="flex items-center gap-2">

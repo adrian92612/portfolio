@@ -1,7 +1,7 @@
 export default function NotFound() {
   return (
-    <div className="grid place-items-center">
-      <h2>404 | Page Not Found</h2>
+    <div className="absolute text-center left-1/2 translate-x-[-50%] top-1/3">
+      <h2 className="text-2xl">404 | Page Not Found</h2>
     </div>
   );
 }

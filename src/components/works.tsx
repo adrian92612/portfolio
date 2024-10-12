@@ -17,6 +17,7 @@ const techStack = [
   "Prisma",
   "PostgreSQL",
   "Git",
+  "Cypress",
 ];
 
 type WorkProps = {
@@ -31,7 +32,7 @@ const works: WorkProps[] = [
   {
     name: "Rental Property Dashboard",
     description:
-      "A simple CRUD (Create, Read, Update, Delete) application for managing rental properties. This tool allows landlords to manage properties, tenants, and rental payments efficiently. Features include property listing, tenant management, and financial tracking for rental income and expenses.",
+      "A simple CRUD (Create, Read, Update, Delete) application for managing rental properties. Features include property listing, tenant management, and financial tracking for rental income and expenses. This app also has an end-to-end testing.",
     stack: [
       "TypeScript",
       "TailwindCSS",
@@ -39,6 +40,7 @@ const works: WorkProps[] = [
       "PostgreSQL",
       "Prisma",
       "AuthJS",
+      "Cypress",
     ],
     code: "https://github.com/adrian92612/rental-property-app",
     demo: "https://rental-property-app.vercel.app/",
