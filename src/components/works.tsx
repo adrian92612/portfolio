@@ -46,7 +46,7 @@ const works: WorkProps[] = [
       "AuthJS",
       "Cypress",
     ],
-    videoId: "zXYb1OMhwBA",
+    videoId: "CXIkbMa5cpU",
     code: "https://github.com/adrian92612/rental-property-app",
     demo: "https://rental-property-app.vercel.app/",
   },
@@ -55,7 +55,7 @@ const works: WorkProps[] = [
     description:
       "A basic e-commerce application where users can browse products, add them to their shopping cart, and proceed to checkout. It includes essential features like item quantity updates, dynamic total calculation, and user-friendly cart management.",
     stack: ["React", "Vite", "HTML5", "CSS", "JavaScript"],
-    videoId: "-vbraa31zNI",
+    videoId: "0Yxno9tfAg0",
     code: "https://github.com/adrian92612/odin-shopping-cart",
     demo: "https://odin-shopping-cart-sigma.vercel.app/",
   },
@@ -64,7 +64,7 @@ const works: WorkProps[] = [
     description:
       "A browser-based implementation of the classic Battleship game. Players can set up ships on their grid and take turns guessing their opponent's ship locations. It combines logic, strategy, and basic animation for an interactive experience.",
     stack: ["HTML5", "CSS", "JavaScript"],
-    videoId: "zXYb1OMhwBA",
+    videoId: "G2A8TBR8Q0A",
     code: "https://github.com/adrian92612/battleship-odin",
     demo: "https://battleship-odin-x2y3.vercel.app/#",
   },
@@ -73,7 +73,7 @@ const works: WorkProps[] = [
     description:
       "A memory game where players must select each card only once while avoiding duplicate selections. After every selection, the deck is shuffled, making it a challenging test of memory and strategy.",
     stack: ["HTML5", "CSS", "JavaScript"],
-    videoId: "zXYb1OMhwBA",
+    videoId: "3ysDjs1w5KI",
     code: "https://github.com/adrian92612/odin-memory-game",
     demo: "https://odin-memory-game-nine.vercel.app/",
   },
@@ -82,7 +82,7 @@ const works: WorkProps[] = [
     description:
       "A functional calculator app built to perform basic arithmetic operations. The app focuses on simplicity and ease of use with a clean UI and responsive layout.",
     stack: ["HTML5", "CSS", "JavaScript"],
-    videoId: "zXYb1OMhwBA",
+    videoId: "M-hz1y0IvH4",
     code: "https://github.com/adrian92612/calculator",
     demo: "https://adrian92612.github.io/calculator/",
   },
@@ -91,7 +91,7 @@ const works: WorkProps[] = [
     description:
       "A web-based recreation of the classic Etch-a-Sketch toy, allowing users to 'draw' by moving their cursor across a grid. The app includes options to adjust the grid size and clear the canvas for new drawings.",
     stack: ["HTML5", "CSS", "JavaScript"],
-    videoId: "zXYb1OMhwBA",
+    videoId: "l5xF0apyMYc",
     code: "https://github.com/adrian92612/etch-a-sketch",
     demo: "https://adrian92612.github.io/etch-a-sketch/",
   },
