@@ -89,17 +89,17 @@ const works: WorkProps[] = [
 
 const WorksSection = () => {
   return (
-    <div className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
+    <section className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
       <h3 className="text-3xl inline-flex items-center gap-2 my-2 animate-fadeInSlideRight">
         / Works
       </h3>
       <ul>
         {works.map((work) => (
-          <li key={work.name} className="animate-fadeInSlideUp ">
+          <li key={work.name} className="animate-fadeInSlideUp mb-8 grid gap-2">
             <h4>{work.name}</h4>
-            <p className="text-sm mb-2">{work.description}</p>
+            <p className="text-sm">{work.description}</p>
             <div>{work.stack.join(" | ")}</div>
-            <div className="flex items-center justify-end gap-2 mt-2 mb-4">
+            <div className="flex items-center justify-end gap-1 text-textColor font-bold">
               <a
                 href={work.code}
                 target="_blank"
@@ -156,13 +156,13 @@ const WorksSection = () => {
           </InView>
         ))}
       </ul> */}
-    </div>
+    </section>
   );
 };
 
 const TechSection = () => {
   return (
-    <div className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
+    <section className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
       <h3 className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight ">
         <PiCodeLight /> Technologies
       </h3>
@@ -181,7 +181,7 @@ const TechSection = () => {
           </InView>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
