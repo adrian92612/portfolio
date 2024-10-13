@@ -154,7 +154,7 @@ const WorksSection = () => {
 
 const TechSection = () => {
   return (
-    <section className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
+    <section className="sticky top-[20%] ml-auto sm:ml-[15%] max-w-60 px-5 text-right border-y border-textColor2 ">
       <h3 className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight ">
         <PiCodeLight /> Technologies
       </h3>
@@ -174,6 +174,26 @@ const TechSection = () => {
         ))}
       </ul>
     </section>
+    // <section className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
+    //   <h3 className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight ">
+    //     <PiCodeLight /> Technologies
+    //   </h3>
+    //   <ul className="my-2">
+    //     {techStack.map((tech) => (
+    //       <InView key={tech} triggerOnce threshold={0.1}>
+    //         {({ inView, ref }) => (
+    //           <li
+    //             key={tech}
+    //             ref={ref}
+    //             className={`${inView ? "animate-fadeInSlideRight" : ""}`}
+    //           >
+    //             {tech}
+    //           </li>
+    //         )}
+    //       </InView>
+    //     ))}
+    //   </ul>
+    // </section>
   );
 };
 

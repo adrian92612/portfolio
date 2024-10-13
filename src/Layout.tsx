@@ -9,7 +9,7 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer className="flex items-center justify-end p-2">
+      <footer className="flex items-center justify-end p-2 mt-10">
         <p>©️ 2024 All Rights Reserved.</p>
       </footer>
     </>

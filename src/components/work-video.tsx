@@ -26,12 +26,14 @@ export default function PreviewVideo({
   return (
     <>
       <div className="fixed inset-0 bg-black/95 z-[4]"></div>
-      <div className="fixed z-[5] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-full max-w-[700px] aspect-[16/9] overflow-hidden rounded-sm">
+      <div className="fixed z-[5] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-full max-w-[1000px] aspect-[16/9] overflow-hidden rounded-sm">
         <iframe
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
           style={{ border: "none" }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          title="Youtube Video Player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;web-share"
           allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
           className="absolute top-0 left-0 w-full h-full"
         ></iframe>
         <button
