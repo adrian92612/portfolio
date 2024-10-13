@@ -1,6 +1,9 @@
 import { MdArrowOutward } from "react-icons/md";
 import { PiCodeLight } from "react-icons/pi";
 import { InView } from "react-intersection-observer";
+import PreviewVideo from "./work-video";
+import { useState } from "react";
+import { IoPlayOutline } from "react-icons/io5";
 
 const techStack = [
   "HTML5",
@@ -24,6 +27,7 @@ type WorkProps = {
   name: string;
   description: string;
   stack: string[];
+  videoId: string;
   code: string;
   demo: string;
 };
@@ -42,6 +46,7 @@ const works: WorkProps[] = [
       "AuthJS",
       "Cypress",
     ],
+    videoId: "zXYb1OMhwBA",
     code: "https://github.com/adrian92612/rental-property-app",
     demo: "https://rental-property-app.vercel.app/",
   },
@@ -50,6 +55,7 @@ const works: WorkProps[] = [
     description:
       "A basic e-commerce application where users can browse products, add them to their shopping cart, and proceed to checkout. It includes essential features like item quantity updates, dynamic total calculation, and user-friendly cart management.",
     stack: ["React", "Vite", "HTML5", "CSS", "JavaScript"],
+    videoId: "-vbraa31zNI",
     code: "https://github.com/adrian92612/odin-shopping-cart",
     demo: "https://odin-shopping-cart-sigma.vercel.app/",
   },
@@ -58,6 +64,7 @@ const works: WorkProps[] = [
     description:
       "A browser-based implementation of the classic Battleship game. Players can set up ships on their grid and take turns guessing their opponent's ship locations. It combines logic, strategy, and basic animation for an interactive experience.",
     stack: ["HTML5", "CSS", "JavaScript"],
+    videoId: "zXYb1OMhwBA",
     code: "https://github.com/adrian92612/battleship-odin",
     demo: "https://battleship-odin-x2y3.vercel.app/#",
   },
@@ -66,6 +73,7 @@ const works: WorkProps[] = [
     description:
       "A memory game where players must select each card only once while avoiding duplicate selections. After every selection, the deck is shuffled, making it a challenging test of memory and strategy.",
     stack: ["HTML5", "CSS", "JavaScript"],
+    videoId: "zXYb1OMhwBA",
     code: "https://github.com/adrian92612/odin-memory-game",
     demo: "https://odin-memory-game-nine.vercel.app/",
   },
@@ -74,6 +82,7 @@ const works: WorkProps[] = [
     description:
       "A functional calculator app built to perform basic arithmetic operations. The app focuses on simplicity and ease of use with a clean UI and responsive layout.",
     stack: ["HTML5", "CSS", "JavaScript"],
+    videoId: "zXYb1OMhwBA",
     code: "https://github.com/adrian92612/calculator",
     demo: "https://adrian92612.github.io/calculator/",
   },
@@ -82,14 +91,27 @@ const works: WorkProps[] = [
     description:
       "A web-based recreation of the classic Etch-a-Sketch toy, allowing users to 'draw' by moving their cursor across a grid. The app includes options to adjust the grid size and clear the canvas for new drawings.",
     stack: ["HTML5", "CSS", "JavaScript"],
+    videoId: "zXYb1OMhwBA",
     code: "https://github.com/adrian92612/etch-a-sketch",
     demo: "https://adrian92612.github.io/etch-a-sketch/",
   },
 ];
 
 const WorksSection = () => {
+  const [showVideo, setShowVideo] = useState<boolean>(false);
+  const [videoId, setVideoId] = useState<string>("");
+
+  const openVideoPlayer = (id: string) => {
+    setVideoId(id);
+    setShowVideo(true);
+  };
+  const closeVideoPlayer = () => setShowVideo(false);
+
   return (
     <section className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
+      {showVideo && (
+        <PreviewVideo videoId={videoId} closeVideoPlayer={closeVideoPlayer} />
+      )}
       <h3 className="text-3xl inline-flex items-center gap-2 my-2 animate-fadeInSlideRight">
         / Works
       </h3>
@@ -100,6 +122,12 @@ const WorksSection = () => {
             <p className="text-sm">{work.description}</p>
             <div>{work.stack.join(" | ")}</div>
             <div className="flex items-center justify-end gap-1 text-textColor font-bold">
+              <button
+                onClick={() => openVideoPlayer(work.videoId)}
+                className="flex items-center relative video-btn"
+              >
+                Video <IoPlayOutline />
+              </button>
               <a
                 href={work.code}
                 target="_blank"
@@ -120,42 +148,6 @@ const WorksSection = () => {
           </li>
         ))}
       </ul>
-
-      {/* animate each work upon view */}
-      {/* <ul>
-        {works.map((work) => (
-          <InView key={work.name} triggerOnce threshold={0.1}>
-            {({ inView, ref }) => (
-              <li
-                ref={ref}
-                className={`${inView ? "animate-fadeInSlideUp" : ""}`}
-              >
-                <h4>{work.name}</h4>
-                <p className="text-sm mb-2">{work.description}</p>
-                <div>{work.stack.join(" | ")}</div>
-                <div className="flex items-center justify-end gap-2 mt-2 mb-4">
-                  <a
-                    href={work.code}
-                    target="_blank"
-                    className="inline-flex items-center relative"
-                  >
-                    Code
-                    <MdArrowOutward />
-                  </a>
-                  <a
-                    href={work.demo}
-                    target="_blank"
-                    className="inline-flex items-center relative"
-                  >
-                    Demo
-                    <MdArrowOutward />
-                  </a>
-                </div>
-              </li>
-            )}
-          </InView>
-        ))}
-      </ul> */}
     </section>
   );
 };

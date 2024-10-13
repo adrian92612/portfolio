@@ -17,7 +17,7 @@
 }
 
 :root {
-  --bg-color: hsl(45, 10%, 95%);
+  --bg-color: hsl(45, 5%, 95%);
   --text-color: hsl(0, 0%, 15%);
   --text-color2: hsl(0, 10%, 25%);
 }
@@ -39,18 +39,17 @@ h5 {
   @apply animate-fadeInSlow min-h-dvh grid grid-rows-[auto_1fr_auto];
 }
 
-body::before {
-  content: "";
+.grainy-overlay {
   position: fixed;
   inset: 0;
   background-image: url("/noise.svg");
-  background-size: cover;
   opacity: 0.5;
-  z-index: 10;
+  z-index: 2;
   pointer-events: none;
 }
 
-a::after {
+a::after,
+.video-btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -61,6 +60,7 @@ a::after {
   transition: width 0.3s ease-in-out;
 }
 
-a:hover::after {
+a:hover::after,
+.video-btn:hover::after {
   width: 100%;
 }

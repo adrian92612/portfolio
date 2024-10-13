@@ -4,6 +4,7 @@ import Header from "./components/header";
 export default function Layout() {
   return (
     <>
+      <div className="grainy-overlay"></div>
       <Header />
       <main>
         <Outlet />
