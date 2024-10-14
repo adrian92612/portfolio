@@ -10,6 +10,12 @@ import { FaGitAlt, FaNodeJs, FaReact } from "react-icons/fa";
 import { TbBrandPrisma, TbBrandTypescript, TbBrandVite } from "react-icons/tb";
 import { SiCypress, SiExpress, SiPostgresql } from "react-icons/si";
 import { AuthJSIcon } from "./svgs";
+import rentalApp from "../assets/rental-property-dashboard.png";
+import shoppingCart from "../assets/shopping-cart.png";
+import battleship from "../assets/battleship.png";
+import memoryCard from "../assets/memory-card.png";
+import calculator from "../assets/calculator.png";
+import etchASketch from "../assets/etch-a-sketch.png";
 
 const techStack = [
   {
@@ -73,6 +79,7 @@ const techStack = [
 type projectProps = {
   name: string;
   description: string;
+  image: string;
   stack: string[];
   videoId: string;
   code: string;
@@ -84,6 +91,7 @@ const projects: projectProps[] = [
     name: "Rental Property Dashboard",
     description:
       "A simple CRUD (Create, Read, Update, Delete) application for managing rental properties. Features include property listing, tenant management, and financial tracking for rental income and expenses. This app also has an end-to-end testing.",
+    image: rentalApp,
     stack: [
       "TypeScript",
       "TailwindCSS",
@@ -101,6 +109,7 @@ const projects: projectProps[] = [
     name: "Shopping Cart",
     description:
       "A basic e-commerce application where users can browse products, add them to their shopping cart, and proceed to checkout. It includes essential features like item quantity updates, dynamic total calculation, and user-friendly cart management.",
+    image: shoppingCart,
     stack: ["React", "Vite", "HTML5", "CSS", "JavaScript"],
     videoId: "0Yxno9tfAg0",
     code: "https://github.com/adrian92612/odin-shopping-cart",
@@ -110,6 +119,7 @@ const projects: projectProps[] = [
     name: "Battleship",
     description:
       "A browser-based implementation of the classic Battleship game. Players can set up ships on their grid and take turns guessing their opponent's ship locations. It combines logic, strategy, and basic animation for an interactive experience.",
+    image: battleship,
     stack: ["HTML5", "CSS", "JavaScript"],
     videoId: "G2A8TBR8Q0A",
     code: "https://github.com/adrian92612/battleship-odin",
@@ -119,6 +129,7 @@ const projects: projectProps[] = [
     name: "Memory Card Game",
     description:
       "A memory game where players must select each card only once while avoiding duplicate selections. After every selection, the deck is shuffled, making it a challenging test of memory and strategy.",
+    image: memoryCard,
     stack: ["HTML5", "CSS", "JavaScript"],
     videoId: "3ysDjs1w5KI",
     code: "https://github.com/adrian92612/odin-memory-game",
@@ -128,6 +139,7 @@ const projects: projectProps[] = [
     name: "Calculator",
     description:
       "A functional calculator app built to perform basic arithmetic operations. The app focuses on simplicity and ease of use with a clean UI and responsive layout.",
+    image: calculator,
     stack: ["HTML5", "CSS", "JavaScript"],
     videoId: "M-hz1y0IvH4",
     code: "https://github.com/adrian92612/calculator",
@@ -137,6 +149,7 @@ const projects: projectProps[] = [
     name: "Etch-a-Sketch",
     description:
       "A web-based recreation of the classic Etch-a-Sketch toy, allowing users to 'draw' by moving their cursor across a grid. The app includes options to adjust the grid size and clear the canvas for new drawings.",
+    image: etchASketch,
     stack: ["HTML5", "CSS", "JavaScript"],
     videoId: "l5xF0apyMYc",
     code: "https://github.com/adrian92612/etch-a-sketch",
@@ -175,6 +188,13 @@ const ProjectsSection = () => {
             className="animate-fadeInSlideUp mb-8 grid gap-2"
           >
             <h4>{project.name}</h4>
+            <div>
+              <img
+                src={project.image}
+                alt={`Image of ${project.name}`}
+                loading="lazy"
+              />
+            </div>
             <p className="text-sm">{project.description}</p>
             <div>{project.stack.join(" | ")}</div>
             <div className="flex items-center justify-end gap-1 text-textColor font-bold">
@@ -236,7 +256,7 @@ const TechSection = () => {
                   inView ? "animate-fadeInSlideRight" : ""
                 } inline-flex items-center gap-1`}
               >
-                {tech.icon} {tech.name}
+                {tech.name} {tech.icon}
               </li>
             )}
           </InView>
