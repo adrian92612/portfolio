@@ -4,7 +4,7 @@ import Header from "./components/header";
 export default function Layout() {
   return (
     <>
-      <div className="grainy-overlay"></div>
+      <div className="grainy-overlay" aria-hidden></div>
       <Header />
       <main>
         <Outlet />

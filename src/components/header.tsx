@@ -2,8 +2,15 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="h-16 sticky text-lg top-0 px-5 flex items-center justify-between bg-bgColor z-[1]">
-      <h1>Adrian Villamin</h1>
+    <header
+      className="h-16 sticky text-lg top-0 px-5 flex items-center justify-between bg-bgColor z-[1]"
+      aria-label="Main Navigation"
+    >
+      <h1>
+        <NavLink to="/" className="hover:underline">
+          Adrian Villamin
+        </NavLink>
+      </h1>
 
       <nav className="flex items-center gap-2">
         <NavLink
@@ -15,12 +22,12 @@ export default function Header() {
           About
         </NavLink>
         <NavLink
-          to="/works"
+          to="/projects"
           className={({ isActive }) =>
             isActive ? "underline text-textColor" : ""
           }
         >
-          Works
+          Projects
         </NavLink>
         <NavLink
           to="/contact"

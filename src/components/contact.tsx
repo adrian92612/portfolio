@@ -8,29 +8,34 @@ const socials = [
   {
     link: "https://github.com/adrian92612",
     name: "Github",
-    icon: <FiGithub />,
+    icon: <FiGithub aria-hidden="true" />,
   },
   {
     link: "https://www.linkedin.com/in/adrian-villamin-831817236/",
     name: "LinkedIn",
-    icon: <RiLinkedinLine />,
+    icon: <RiLinkedinLine aria-hidden="true" />,
   },
   {
     link: "https://www.instagram.com/advil120692/",
     name: "Instagram",
-    icon: <CiInstagram />,
+    icon: <CiInstagram aria-hidden="true" />,
   },
 ];
 
 export default function Contact() {
   return (
-    <section className="flex border-black h-full items-center">
+    <section
+      className="flex border-black h-full items-center"
+      aria-labelledby="contact-heading"
+    >
       <div className="max-w-64 ml-5 md:ml-[50%] mt-10">
-        <h2 className="text-3xl mb-2">/ Contact</h2>
+        <h2 id="contact-heading" className="text-3xl mb-2">
+          / Contact
+        </h2>
 
         <div>
           <p className="inline-flex items-center gap-1">
-            <CiLocationOn /> Manila, Philippines
+            <CiLocationOn aria-hidden="true" /> Manila, Philippines
           </p>
           <h3>Interested in working together?</h3>
           <p>Feel free to send me an email or DM me on my socials</p>
@@ -40,7 +45,9 @@ export default function Contact() {
                 <a
                   href={social.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 relative"
+                  aria-label={`Visit my ${social.name} profile`}
                 >
                   {social.name} {social.icon}
                 </a>
@@ -53,13 +60,18 @@ export default function Contact() {
               <a
                 href="mailto:adrianvillamin0612@gmail.com"
                 className="inline-flex items-center gap-1 relative"
+                aria-label="Send me an email"
               >
-                Email <AiOutlineMail />
+                Email <AiOutlineMail aria-hidden="true" />
               </a>
             </li>
             <li>
-              <a href="" className="inline-flex items-center gap-1 relative">
-                Resume <IoDocumentTextOutline />
+              <a
+                href=""
+                className="inline-flex items-center gap-1 relative"
+                aria-label="View my resume"
+              >
+                Resume <IoDocumentTextOutline aria-hidden="true" />
               </a>
             </li>
           </ul>

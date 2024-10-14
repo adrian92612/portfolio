@@ -1,29 +1,29 @@
 import { MdArrowOutward } from "react-icons/md";
 import { PiCodeLight } from "react-icons/pi";
 import { InView } from "react-intersection-observer";
-import PreviewVideo from "./work-video";
+import PreviewVideo from "./project-video";
 import { useState } from "react";
 import { IoPlayOutline } from "react-icons/io5";
 
 const techStack = [
   "HTML5",
   "CSS",
+  "TailwindCSS",
   "JavaScript",
-  "Typescript",
+  "TypeScript",
   "React",
   "NextJS",
-  "TailwindCSS",
   "Vite",
-  "AuthJS",
   "NodeJS",
   "ExpressJS",
   "Prisma",
   "PostgreSQL",
-  "Git",
+  "AuthJS",
   "Cypress",
+  "Git",
 ];
 
-type WorkProps = {
+type projectProps = {
   name: string;
   description: string;
   stack: string[];
@@ -32,7 +32,7 @@ type WorkProps = {
   demo: string;
 };
 
-const works: WorkProps[] = [
+const projects: projectProps[] = [
   {
     name: "Rental Property Dashboard",
     description:
@@ -97,7 +97,7 @@ const works: WorkProps[] = [
   },
 ];
 
-const WorksSection = () => {
+const ProjectsSection = () => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
   const [videoId, setVideoId] = useState<string>("");
 
@@ -108,38 +108,52 @@ const WorksSection = () => {
   const closeVideoPlayer = () => setShowVideo(false);
 
   return (
-    <section className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2">
+    <section
+      className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2"
+      aria-labelledby="projects-heading"
+    >
       {showVideo && (
         <PreviewVideo videoId={videoId} closeVideoPlayer={closeVideoPlayer} />
       )}
-      <h3 className="text-3xl inline-flex items-center gap-2 my-2 animate-fadeInSlideRight">
-        / Works
+      <h3
+        id="projects-heading"
+        className="text-3xl inline-flex items-center gap-2 my-2 animate-fadeInSlideRight"
+      >
+        / Projects
       </h3>
       <ul>
-        {works.map((work) => (
-          <li key={work.name} className="animate-fadeInSlideUp mb-8 grid gap-2">
-            <h4>{work.name}</h4>
-            <p className="text-sm">{work.description}</p>
-            <div>{work.stack.join(" | ")}</div>
+        {projects.map((project) => (
+          <li
+            key={project.name}
+            className="animate-fadeInSlideUp mb-8 grid gap-2"
+          >
+            <h4>{project.name}</h4>
+            <p className="text-sm">{project.description}</p>
+            <div>{project.stack.join(" | ")}</div>
             <div className="flex items-center justify-end gap-1 text-textColor font-bold">
               <button
-                onClick={() => openVideoPlayer(work.videoId)}
+                onClick={() => openVideoPlayer(project.videoId)}
                 className="flex items-center relative video-btn"
+                aria-label={`Play video for ${project.name}`}
               >
                 Video <IoPlayOutline />
               </button>
               <a
-                href={work.code}
+                href={project.code}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center relative"
+                aria-label={`View code for ${project.name} (opens in a new tab)`}
               >
                 Code
                 <MdArrowOutward />
               </a>
               <a
-                href={work.demo}
+                href={project.demo}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center relative"
+                aria-label={`View demo of ${project.name} (opens in a new tab)`}
               >
                 Demo
                 <MdArrowOutward />
@@ -154,8 +168,14 @@ const WorksSection = () => {
 
 const TechSection = () => {
   return (
-    <section className="sticky top-[20%] ml-auto sm:ml-[15%] max-w-60 px-5 text-right border-y border-textColor2 ">
-      <h3 className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight ">
+    <section
+      className="sticky top-[20%] ml-auto sm:ml-[15%] max-w-60 px-5 text-right border-y border-textColor2"
+      aria-labelledby="tech-heading"
+    >
+      <h3
+        id="tech-heading"
+        className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight "
+      >
         <PiCodeLight /> Technologies
       </h3>
       <ul className="my-2">
@@ -174,35 +194,15 @@ const TechSection = () => {
         ))}
       </ul>
     </section>
-    // <section className="sm:fixed sm:ml-[10%] ml-auto mr-2 mt-[10%] max-w-60 px-5 text-right border-y border-textColor2 ">
-    //   <h3 className="text-lg mt-2 inline-flex items-center gap-2 animate-fadeInSlideRight ">
-    //     <PiCodeLight /> Technologies
-    //   </h3>
-    //   <ul className="my-2">
-    //     {techStack.map((tech) => (
-    //       <InView key={tech} triggerOnce threshold={0.1}>
-    //         {({ inView, ref }) => (
-    //           <li
-    //             key={tech}
-    //             ref={ref}
-    //             className={`${inView ? "animate-fadeInSlideRight" : ""}`}
-    //           >
-    //             {tech}
-    //           </li>
-    //         )}
-    //       </InView>
-    //     ))}
-    //   </ul>
-    // </section>
   );
 };
 
-export default function Works() {
+export default function Projects() {
   return (
     <>
       <div className="grid  sm:grid-cols-2 mb-5 gap-5 min-h-full">
         <div className=" border-black ">
-          <WorksSection />
+          <ProjectsSection />
         </div>
         <div className="border-black">
           <TechSection />

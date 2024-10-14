@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section className="flex border-black h-full items-center">
+    <section className="flex h-full items-center" aria-label="About Me Section">
       <div className="max-w-64 ml-5 md:ml-[50%] mt-10">
         <h1 className="text-3xl mb-2">/ About Me</h1>
         <p>
