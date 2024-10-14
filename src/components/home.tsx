@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <section className="flex h-full items-center" aria-label="About Me Section">
-      <div className="max-w-64 ml-5 md:ml-[50%] mt-10">
+      <div className="max-w-64 ml-5 md:ml-[50%] mt-10 animate-fadeIn">
         <h1 className="text-3xl mb-2">/ About Me</h1>
         <p>
           As a passionate and dedicated aspiring web developer, I am deeply

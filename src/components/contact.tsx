@@ -28,7 +28,7 @@ export default function Contact() {
       className="flex border-black h-full items-center"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-64 ml-5 md:ml-[50%] mt-10">
+      <div className="max-w-64 ml-5 md:ml-[50%] mt-10 animate-fadeIn">
         <h2 id="contact-heading" className="text-3xl mb-2">
           / Contact
         </h2>
