@@ -1,17 +1,19 @@
-import profilePic from "../assets/pic.jpeg";
+import profilePic from "../../assets/pic.jpeg";
 
 const ImageCard = () => {
   return (
     <div className="flex items-center justify-center sm:pr-5 sm:justify-end w-full h-full">
-      <div className="border p-5 border-white bg-white shadow-lg shadow-slate-600 rotate-2 rounded-sm  hover:scale-110 hover:-rotate-1 transform hover:z-[5] duration-500">
-        <div className="w-52 mb-5">
+      <div className="border p-5 border-white bg-white shadow-lg shadow-slate-600 rotate-2 rounded-sm hover:scale-110 hover:-rotate-1 hover:z-[5] transform duration-500">
+        <div className="w-52 mb-5 animate-fadeInSlow">
           <img
             src={profilePic}
             alt="Picture of myself"
             className="grayscale-[20%] hover:grayscale-0 rounded-sm"
           />
         </div>
-        <p className="text-center text-xs">@ Mt. Pulag</p>
+        <p className="text-center text-xs animate-fadeInSlideRight">
+          @ Mt. Pulag
+        </p>
       </div>
     </div>
   );
