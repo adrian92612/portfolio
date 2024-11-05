@@ -4,6 +4,9 @@ import { FiGithub } from "react-icons/fi";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { RiLinkedinLine } from "react-icons/ri";
 
+const resumeLink =
+  "https://drive.google.com/file/d/1oxJYVrJ-aTYYe3dYsGn7j2zN9mNNMvFT/view?usp=sharing";
+
 const socials = [
   {
     link: "https://github.com/adrian92612",
@@ -37,8 +40,11 @@ export default function Contact() {
           <p className="inline-flex items-center gap-1">
             <CiLocationOn aria-hidden="true" /> Manila, Philippines
           </p>
-          <h3>Interested in working together?</h3>
-          <p>Feel free to send me an email or DM me on my socials</p>
+          <h3 className="text-lg">Let&apos;s work together!</h3>
+          <p>
+            Have a project idea? Feel free to send me an email or DM me on my
+            socials
+          </p>
           <ul className="my-5">
             {socials.map((social) => (
               <li key={social.name}>
@@ -67,7 +73,9 @@ export default function Contact() {
             </li>
             <li>
               <a
-                href=""
+                href={resumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 relative"
                 aria-label="View my resume"
               >

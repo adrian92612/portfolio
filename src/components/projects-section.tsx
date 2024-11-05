@@ -102,7 +102,7 @@ export function ProjectsSection() {
 
   return (
     <section
-      className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2"
+      className="ml-2 mt-5 sm:ml-[50%] max-w-60 border-y border-textColor2 z-10"
       aria-labelledby="projects-heading"
     >
       {showVideo && (
@@ -120,7 +120,7 @@ export function ProjectsSection() {
             key={project.name}
             className="animate-fadeInSlideUp mb-8 grid gap-2"
           >
-            <h4>{project.name}</h4>
+            <h4 className="text-lg">{project.name}</h4>
             <div>
               <img
                 src={project.image}
