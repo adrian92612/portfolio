@@ -30,14 +30,13 @@ export default function Home() {
         <div className="max-w-64">
           <h1 className="text-3xl mb-2">/ About Me</h1>
           <p>
-            As a passionate and dedicated aspiring web developer, I am deeply
-            committed to honing my skills and expanding my knowledge within the
-            tech industry. While I may not yet have formal work experience in
-            web development, I have been diligently crafting projects through
-            self-directed learning. My enthusiasm lies in building seamless,
-            user-centric websites and applications. I am eager to contribute to
-            innovative projects and grow within a dynamic and professional
-            environment.
+            Hey, I’m Adrian — a software engineer who enjoys building clean,
+            fast, and responsive web interfaces. I work mainly with TypeScript,
+            Next.js, and modern frontend tools to craft smooth user experiences.
+            Right now, I’m working as a Junior Software Engineer, building
+            real-world frontend features and collaborating with a team. Before
+            that, I focused on personal projects, learning by doing and leveling
+            up my skills along the way. Always learning. Always building.
           </p>
         </div>
       </div>
