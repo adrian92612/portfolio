@@ -21,7 +21,7 @@ const socials = [
     icon: <RiLinkedinLine aria-hidden="true" />,
   },
   {
-    link: "https://www.instagram.com/advil120692/",
+    link: "https://www.instagram.com/adrvil126/",
     name: "Instagram",
     icon: <CiInstagram aria-hidden="true" />,
   },
