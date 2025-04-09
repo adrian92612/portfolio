@@ -7,6 +7,8 @@ import { RiLinkedinLine } from "react-icons/ri";
 const resumeLink =
   "https://drive.google.com/file/d/1oxJYVrJ-aTYYe3dYsGn7j2zN9mNNMvFT/view?usp=sharing";
 
+const emailAddress = "adrvil.code@gmail.com";
+
 const socials = [
   {
     link: "https://github.com/adrian92612",
@@ -64,7 +66,7 @@ export default function Contact() {
           <ul className="flex items-center justify-end gap-5">
             <li>
               <a
-                href="mailto:adrianvillamin0612@gmail.com"
+                href={`mailto:${emailAddress}`}
                 className="inline-flex items-center gap-1 relative"
                 aria-label="Send me an email"
               >
